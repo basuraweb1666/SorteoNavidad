@@ -1,0 +1,624 @@
+/* Estilos generales */
+:root {
+    --christmas-red: #C41E3A;
+    --christmas-green: #1E8449;
+    --christmas-gold: #F1C40F;
+    --snow-white: #F5F5F5;
+    --dark-green: #0B3B0B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0B3B0B;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(ellipse at 10% 20%, rgba(5, 80, 5, 0.8) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 80%, rgba(5, 80, 5, 0.8) 0%, transparent 40%),
+        radial-gradient(ellipse at 10% 80%, rgba(5, 80, 5, 0.8) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 20%, rgba(5, 80, 5, 0.8) 0%, transparent 40%);
+}
+
+/* Animación de copos de nieve */
+@keyframes snow {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5em;
+    animation: snow linear infinite;
+    opacity: 0.7;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 25%; animation-duration: 18s; animation-delay: -2s; }
+.snowflake:nth-child(3) { left: 40%; animation-duration: 12s; animation-delay: -5s; }
+.snowflake:nth-child(4) { left: 55%; animation-duration: 20s; animation-delay: -3s; }
+.snowflake:nth-child(5) { left: 70%; animation-duration: 16s; animation-delay: -1s; }
+.snowflake:nth-child(6) { left: 85%; animation-duration: 14s; animation-delay: -4s; }
+.snowflake:nth-child(7) { left: 30%; animation-duration: 17s; animation-delay: -6s; }
+.snowflake:nth-child(8) { left: 60%; animation-duration: 19s; animation-delay: -7s; }
+.snowflake:nth-child(9) { left: 15%; animation-duration: 13s; animation-delay: -3s; }
+.snowflake:nth-child(10) { left: 80%; animation-duration: 16s; animation-delay: -5s; }
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--christmas-gold);
+}
+
+/*
+@keyframes borderGlow {
+    from {
+        box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(241, 196, 15, 0.8);
+    }
+}
+*/
+
+/* Título */
+.title {
+    font-family: 'Mountains of Christmas', cursive;
+    color: var(--christmas-gold);
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 3px 3px 0 var(--christmas-red), 
+                 -1px -1px 0 var(--christmas-red), 
+                 1px -1px 0 var(--christmas-red), 
+                 -1px 1px 0 var(--christmas-red), 
+                 1px 1px 0 var(--christmas-red);
+    animation: titlePulse 2s infinite alternate;
+}
+
+@keyframes titlePulse {
+    from {
+        transform: scale(1);
+        text-shadow: 3px 3px 0 var(--christmas-red);
+    }
+    to {
+        transform: scale(1.05);
+        text-shadow: 5px 5px 0 var(--christmas-red);
+    }
+}
+
+/* Contador regresivo */
+.countdown-container {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border: 2px solid var(--christmas-red);
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+.countdown-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    20%, 100% {
+        left: 100%;
+    }
+}
+*/
+
+.countdown-container h2 {
+    color: var(--christmas-gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.countdown-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.countdown-mobile {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.countdown-mobile-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-item span:first-child {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--christmas-gold);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    min-width: 80px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--christmas-gold);
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(241, 196, 15, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);
+    }
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--snow-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-separator {
+    font-size: 3rem;
+    color: var(--christmas-gold);
+    font-weight: bold;
+    margin: 0 0.5rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Sección del ganador */
+.winner-display {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border: 2px solid var(--christmas-green);
+    box-shadow: 0 0 20px rgba(30, 132, 73, 0.5);
+    transition: all 0.5s ease;
+}
+
+.winner-display h2 {
+    color: var(--christmas-gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+.winner-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--christmas-gold);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 2px dashed var(--christmas-gold);
+}
+
+/*
+@keyframes borderDance {
+    0% { border-top-color: var(--christmas-gold); border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; }
+    25% { border-right-color: var(--christmas-gold); border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; }
+    50% { border-bottom-color: var(--christmas-gold); border-top-color: transparent; border-right-color: transparent; border-left-color: transparent; }
+    75% { border-left-color: var(--christmas-gold); border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; }
+    100% { border-top-color: var(--christmas-gold); border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; }
+}
+*/
+
+.placeholder {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Caja de instrucciones */
+.instructions-section {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 2px solid var(--christmas-green);
+    box-shadow: 0 0 20px rgba(30, 132, 73, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.instructions-section h2 {
+    color: var(--christmas-gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+}
+
+.instructions-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.instructions-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Sección de información */
+.info-section {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 2px solid var(--christmas-red);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section h2 {
+    color: var(--christmas-gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+}
+
+.info-section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/*
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--christmas-red), 
+        var(--christmas-gold), 
+        var(--christmas-green), 
+        var(--christmas-gold), 
+        var(--christmas-red)
+    );
+    background-size: 400% 100%;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+*/
+
+/* Adornos navideños */
+.ornament-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.ornament {
+    width: 60px;
+    height: 80px;
+    position: relative;
+    transform-origin: top center;
+}
+
+/*
+@keyframes swing {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+*/
+
+.ornament-top {
+    width: 20px;
+    height: 20px;
+    background-color: var(--christmas-gold);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.ornament-body {
+    width: 50px;
+    height: 60px;
+    background-color: var(--christmas-red);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ornament-bottom {
+    width: 10px;
+    height: 10px;
+    background-color: var(--christmas-gold);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Efectos de luces navideñas */
+.lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+/*
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+*/
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-desktop {
+        display: none;
+    }
+    
+    .countdown-mobile {
+        display: flex;
+    }
+    
+    .countdown-mobile-row {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .countdown-mobile-row:last-child {
+        margin-bottom: 0;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 2rem;
+        min-width: 60px;
+    }
+    
+    .countdown-separator {
+        font-size: 2rem;
+    }
+    
+    .winner-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .countdown-mobile-row {
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .countdown-item {
+        min-width: 50px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.5rem;
+        min-width: 50px;
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .countdown-separator {
+        font-size: 1.5rem;
+    }
+    
+    .winner-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .countdown-mobile-row {
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .countdown-item {
+        min-width: 40px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.2rem;
+        min-width: 40px;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.6rem;
+    }
+    
+    .countdown-separator {
+        font-size: 1.2rem;
+    }
+}
+
+/* Forzar diseño de dos filas en móviles */
+@media (max-width: 768px) {
+    .countdown {
+        flex-direction: column !important;
+    }
+    
+    .countdown-row {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    /* Asegurar que los elementos se adapten al ancho disponible */
+    .countdown-item {
+        flex: 1;
+        min-width: auto;
+        max-width: 100px;
+    }
+}
+
+/* Estilos para el número ganador */
+.winner-name {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--christmas-gold);
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.8);
+    padding: 1rem;
+}
+
+.winner-name .placeholder {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.winner-number {
+    animation: pulse 1s infinite;
+    display: block;
+    text-align: center;
+    width: 100%;
+}

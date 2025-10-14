@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo Viaje de Fin de Curso</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">¡Sorteo de Navidad!</h1>
+        
+        <div class="countdown-container">
+            <h2>Ganador en:</h2>
+            <div id="countdown" class="countdown">
+                <!-- Diseño para escritorio (todos los elementos en una fila) -->
+                <div class="countdown-desktop">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+                
+                <!-- Diseño para móviles (2 filas: días/horas en la primera, minutos/segundos en la segunda) -->
+                <div class="countdown-mobile">
+                    <div class="countdown-mobile-row">
+                        <div class="countdown-item">
+                            <span id="days-mobile">00</span>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span id="hours-mobile">00</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                    </div>
+                    <div class="countdown-mobile-row">
+                        <div class="countdown-item">
+                            <span id="minutes-mobile">00</span>
+                            <span class="countdown-label">Min</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span id="seconds-mobile">00</span>
+                            <span class="countdown-label">Seg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="winner-display" id="winnerDisplay">
+            <h2>¡Numero ganador!</h2>
+            <div class="winner-name" id="winnerName">
+                <span class="placeholder">Esperando sorteo</span>
+            </div>
+        </div>
+
+        <!-- Caja de instrucciones -->
+        <div class="instructions-section">
+            <h2>Instrucciones</h2>
+            <p>Este es un ejemplo de contenido informativo. Aquí se mostraría la fecha del evento, los premios disponibles y cómo participar en el sorteo.</p>
+            <p>Los participantes pueden adquirir tickets a través de nuestra plataforma en línea. Cada ticket tiene un costo de $5 y se pueden comprar hasta 10 por persona.</p>
+            <p>El sorteo se realizará el 22 de octubre de 2025 a las 20:00 horas. Los ganadores serán notificados a través de correo electrónico y tendrán 72 horas para reclamar su premio.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>¿Por qué hacemos esto?</h2>
+            <p>Este es un ejemplo de contenido explicativo. Aquí se detallaría el propósito del evento y los beneficios para la comunidad.</p>
+            <p>Los fondos recaudados a través de este sorteo se destinarán íntegramente al financiamiento del viaje de fin de curso de los estudiantes.</p>
+            <p>Además de la recaudación de fondos, este evento busca fomentar la participación comunitaria y crear un espacio de celebración y unión.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
